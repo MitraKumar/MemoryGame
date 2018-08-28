@@ -1,0 +1,36 @@
+body {
+    background-color: #f4f4f4;
+}
+
+.header {
+    padding: 5px;
+    margin-bottom: 30px; 
+    text-align: center;
+    background-color: #fff;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.item {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#attempts {
+    margin: 10px;
+    font-size: 20px;
+}
