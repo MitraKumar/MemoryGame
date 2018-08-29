@@ -4,7 +4,7 @@ class Global {
         this.elms = elms;
         this.selected = [];
         this.tries = 0;
-        this.attempts = 14;
+        this.attempts = 20;
         this.finished = false;
     }
 
