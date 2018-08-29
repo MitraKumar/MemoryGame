@@ -4,34 +4,33 @@ class Global {
         this.elms = elms;
         this.selected = [];
         this.tries = 0;
+        this.attempts = 14;
+        this.finished = false;
     }
 
     render() {
         this.elms.forEach((elm, i) => {
             elm.addEventListener('click', (e) => {
+                if (this.finished) return;
+
                 this.tries++;
-                // console.log("Number of attempts: " + this.tries);
-                if (this.tries > 10) {
+                if (this.tries > this.attempts) {
                     document.getElementById('message').innerHTML = "You Loose!!";
                     document.getElementById('attempts').innerHTML = "0";
-                    return;
+                    this.finished = true;
                 }
-                document.getElementById('attempts').innerHTML = "Total attempts left: " + (10 - this.tries);
+                document.getElementById('attempts').innerHTML = `Total attempts left: ${this.attempts - this.tries}`;
 
                 this.selected.push(e.target);
-                console.log(this.selected.length);
                 this.reveal(elm);
 
                 if (this.selected.length === 2) {
                     if (this.chekPair()) {
-                        // console.log("Choose the same letter");
                         this.markPair();
-                        if (this.finished()) {
-                            // console.log("You Win!!!");
-                            document.getElementById('message').innerHTML = "You Win!!"
+                        if (this.isWin()) {
+                            document.getElementById('message').innerHTML = "You Win!!";
                         }
                     } else {
-                        // console.log("Oops, didn't choose the correct letter");
                         this.hide();
                     }
                     this.selected = [];
@@ -82,10 +81,11 @@ class Global {
         }
     }
 
-    finished() {
+    isWin() {
         for (let i = 0; i < this.pairs.length; i++) {
             if (!this.pairs[i].revealed[0] && !this.pairs[i].revealed[1]) return false;
         }
+        this.finished = true;
         return true;
     }
 }

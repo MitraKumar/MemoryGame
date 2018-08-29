@@ -1,11 +1,12 @@
 function calculatePairs(options) {
     let choices = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
         let temp = pickTwoNumber(options);
         if (temp.length > 0) {
             choices.push(temp);
         }
     }
+    console.log(choices);
     return choices;
 }
 

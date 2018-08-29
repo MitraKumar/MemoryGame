@@ -1,6 +1,6 @@
 let items = document.querySelectorAll('.item');
-let options = [0, 1, 2, 3, 4, 5, 6, 7];
-let texts = ['Apple', 'Cat', 'Dog', 'Orrange']
+let options = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+let texts = ['Apple', 'Cat', 'Dog', 'Orrange', 'Melon', 'Lion']
 let pairs = [];
 
 let choices = calculatePairs(options);
@@ -16,6 +16,7 @@ for (let i = 0; i < pairs.length; i++) {
 }
 
 setTimeout(() => {
+    document.getElementById('attempts').innerHTML = "Total attempts left: " + game.attempts;
     game.render();
     for (let i = 0; i < pairs.length; i++) {
         pairs[i].hide();
