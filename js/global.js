@@ -4,7 +4,7 @@ class Global {
         this.elms = elms;
         this.selected = [];
         this.tries = 0;
-        this.attempts = 20;
+        this.attempts = 18;
         this.finished = false;
     }
 
@@ -14,7 +14,7 @@ class Global {
                 if (this.finished) return;
 
                 this.tries++;
-                if (this.tries > this.attempts) {
+                if (this.tries >= this.attempts) {
                     document.getElementById('message').innerHTML = "You Loose!!";
                     document.getElementById('attempts').innerHTML = "0";
                     this.finished = true;
