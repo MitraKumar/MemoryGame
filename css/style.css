@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
 
@@ -58,4 +58,10 @@ body {
 .rules {
     background-color: #3C2525;
     padding: 10px;
+}
+
+.rules p {
+    background-color: #6C2525;
+    padding: 2px;
+    margin: 2px;
 }

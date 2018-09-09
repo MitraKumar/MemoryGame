@@ -22,4 +22,4 @@ setTimeout(() => {
     for (let i = 0; i < pairs.length; i++) {
         pairs[i].hide();
     }
-}, 5000);
+}, 3000);
