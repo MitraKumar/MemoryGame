@@ -21,6 +21,10 @@ body {
     background-color: #4054F7;
 }
 
+.menu {
+    display: none;
+}
+
 .container {
     width: 90%;
     margin: auto;
@@ -55,13 +59,43 @@ body {
     font-size: 20px;
 }
 
-.rules {
+.rules, .rules2 {
     background-color: #3C2525;
     padding: 10px;
 }
 
-.rules p {
+.rules p, .rules2 p {
     background-color: #6C2525;
     padding: 2px;
     margin: 2px;
+}
+
+.container2 {
+    width: 80%;
+    margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+    .menu {
+        display: inline-block;
+    }
+
+    .menu img {
+        width: 100px;
+    }
+
+    .main {
+        display: block;
+    }
+
+    .rules {
+        display: none;
+    }
+
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
