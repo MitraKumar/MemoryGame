@@ -6,7 +6,6 @@ function calculatePairs(options) {
             choices.push(temp);
         }
     }
-    console.log(choices);
     return choices;
 }
 
