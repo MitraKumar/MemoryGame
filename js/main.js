@@ -16,10 +16,17 @@ for (let i = 0; i < pairs.length; i++) {
     pairs[i].show();
 }
 
-setTimeout(() => {
-    document.getElementById('attempts').innerHTML = "Total attempts left: " + game.attempts;
-    game.render();
-    for (let i = 0; i < pairs.length; i++) {
-        pairs[i].hide();
-    }
-}, 3000);
+document.getElementById('rules-btn').addEventListener('click', () => {
+    let rulesD = document.querySelector('.rules');
+    let gridD = document.querySelector('.grid');
+    rulesD.style.display = 'none';
+    gridD.style.display = 'grid';
+
+    setTimeout(() => {
+        document.getElementById('attempts').innerHTML = "Total attempts left: " + game.attempts;
+        game.render();
+        for (let i = 0; i < pairs.length; i++) {
+            pairs[i].hide();
+        }
+    }, 3000);
+})
